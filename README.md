@@ -22,7 +22,7 @@ Sub CopyMatchingValuesWithCondition()
             If wsSrc.Cells(i, 1).Value = wsDest.Cells(j, 12).Value Then
                 ' B열 값이 K열에 포함되어 있으면
                 If InStr(1, wsDest.Cells(j, 11).Value, wsSrc.Cells(i, 2).Value, vbTextCompare) > 0 Then
-                    wsDest.Cells(j, 3).Value = wsSrc.Cells(i, 3).Value ' C열 값을 지급내역 시트 D열에 복사
+                    wsDest.Cells(j, 3).Value = wsSrc.Cells(i, 3).Value ' C열 값을 지급내역 시트 C열에 복사
                 End If
             End If
         Next j
