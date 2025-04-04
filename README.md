@@ -1,5 +1,6 @@
 # VBA
 VBA 코드
+적요에 있는 키워드로 보고내용 맵핑
 
 Sub CopyMatchingValuesWithCondition()
     Dim wsSrc As Worksheet, wsDest As Worksheet
@@ -30,5 +31,31 @@ Sub CopyMatchingValuesWithCondition()
 
     MsgBox "작업 완료!", vbInformation
 End Sub
+
+
+rng1, rng2의 값이 val에 있으면 1, 그렇지 않으면 0을 출력하는 함수
+Function CheckDifference2(rng1 As Range, rng2 As Range, val As Range) As Integer
+    Dim i As Integer
+    Dim refValue1 As Double
+    Dim refValue2 As Double
+
+    ' 기준 셀 값 가져오기
+    refValue1 = rng1.Value
+    refValue2 = rng2.Value
+
+    ' val 범위 내 각 셀과 비교
+    For i = 1 To val.Rows.Count
+        If Abs(val.Cells(i, 1).Value - refValue1) < 100 Or Abs(val.Cells(i, 1).Value - refValue2) < 100 Then
+            CheckDifference2 = 1
+            Exit Function  ' 조건을 만족하면 즉시 종료
+        End If
+    Next i
+    
+    ' 조건을 만족하는 값이 없으면 0 반환
+    CheckDifference2 = 0
+End Function
+
+
+
 
 
