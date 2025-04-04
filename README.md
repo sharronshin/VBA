@@ -1,6 +1,6 @@
 # VBA
 VBA 코드
-적요에 있는 키워드로 보고내용 맵핑
+' 적요에 있는 키워드로 보고내용 맵핑
 
 Sub CopyMatchingValuesWithCondition()
     Dim wsSrc As Worksheet, wsDest As Worksheet
@@ -33,7 +33,7 @@ Sub CopyMatchingValuesWithCondition()
 End Sub
 
 
-rng1, rng2의 값이 val에 있으면 1, 그렇지 않으면 0을 출력하는 함수
+' rng1, rng2의 값이 val에 있으면 1, 그렇지 않으면 0을 출력하는 함수
 Function CheckDifference2(rng1 As Range, rng2 As Range, val As Range) As Integer
     Dim i As Integer
     Dim refValue1 As Double
